@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Successful Registration
+{% endblock %}
+
+{% block main %}
+<h1>You have successfully sold {{shares}} shares of {{name}}.</h1>
+<h3>{{profit}} has been added to your cash on hand, leaving you with a total of: {{cash}}.</h3>
+<h3>You now own {{owned}} shares of {{name}}.</h3>
+<br>
+<br>
+<form action="/sold" method="POST">
+    <button class="btn btn-primary" type="submit">View Personal Index</button>
+</form>
+{% endblock %}

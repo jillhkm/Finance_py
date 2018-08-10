@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Index
+{% endblock %}
+
+{% block main %}
+<h1>Currently Owned Stocks</h1>
+<br>
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Shares Owned</th>
+      <th scope="col">Current Price</th>
+      <th scope= "col">Total Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in valuestocklist %}
+    <tr>
+      {%- for part in item %}
+      <td>{{ part }}</td>
+      {%- endfor %}
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>
+<br>
+<table class = "table table-borderless">
+    <tbody>
+    <tr>
+        <th colspan = "4" style = "text-align: right;"> Total Value of Stocks: </th>
+        <td style = "text-align: left;">
+            {{ totalstocks }}
+        </td>
+    </tr>
+    <tr>
+        <th colspan = "4" style ="text-align: right;">Cash Remaining in Account:</th>
+        <td style ="text-align: left;">
+            {{cash}}
+        </td>
+    </tr>
+    <tr>
+        <th colspan = "4" style ="text-align: right;">Total Value of Assets:</th>
+        <td style ="text-align: left;">
+            {{total}}
+        </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
